@@ -1,43 +1,46 @@
 
 package exestoque;
 
-import java.util.ArrayList;
-
 public class Produtos {
-    String nome;
-    double preco;
-    int qtd, codigo;
+    private int id;
+    private String nome;
+    private int quantidade;
+    private int estoqueMinimo;
+    private Fornecedor fornecedor;
 
-    public Produtos(int codigo, String nome, double preco, int qtd) {
+    public Produtos(int id, String nome, int quantidade, int estoqueMinimo, Fornecedor fornecedor) {
+        this.id = id;
         this.nome = nome;
-        this.preco = preco;
-        this.qtd = qtd;
-        this.codigo = codigo;
+        this.quantidade = quantidade;
+        this.estoqueMinimo = estoqueMinimo;
+        this.fornecedor = fornecedor;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+
+    public int getQuantidade() {
+        return quantidade;
     }
-    public double getPreco() {
-        return preco;
+
+    public int getEstoqueMinimo() {
+        return estoqueMinimo;
     }
-    public void setPreco(double preco) {
-        this.preco = preco;
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
     }
-    public int getQtd() {
-        return qtd;
+
+    public void adicionarEstoque(int quantidade) {
+        this.quantidade += quantidade;
     }
-    public void setQtd(int qtd) {
-        this.qtd = qtd;
+    @Override
+    public String toString() {
+        return nome + " - Estoque: " + quantidade + " (Mínimo: " + estoqueMinimo + ")";
     }
-    public int getCodigo() {
-        return codigo;
-    }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-    
 }
