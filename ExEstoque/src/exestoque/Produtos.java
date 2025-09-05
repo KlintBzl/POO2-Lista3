@@ -1,37 +1,43 @@
 
 package exestoque;
 
-public class Produtos {
-private int codigo;
-    private String nome;
-    private double preco;
-    private int quantidade;
+import java.util.ArrayList;
 
-    public Produtos(int codigo, String nome, double preco, int quantidade) {
-        this.codigo = codigo;
+public class Produtos {
+    String nome;
+    double preco;
+    int qtd, codigo;
+
+    public Produtos(int codigo, String nome, double preco, int qtd) {
         this.nome = nome;
         this.preco = preco;
-        this.quantidade = quantidade;
-    }
-
-    public int getCodigo() {
-        return codigo;
+        this.qtd = qtd;
+        this.codigo = codigo;
     }
 
     public String getNome() {
         return nome;
     }
-
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     public double getPreco() {
         return preco;
     }
-
-    public int getQuantidade() {
-        return quantidade;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
-
-    public void adicionarQuantidade(int qtd) {
-        this.quantidade += qtd;
+    public int getQtd() {
+        return qtd;
+    }
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     
 }
